@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const cols = 'c,m,y,k,r,g,b\n';
+//const cols = 'c,m,y,k,r,g,b\n';
 const COUNT = 10_000_000;
 
 const stream = fs.createWriteStream(`input.csv`);
@@ -8,7 +8,7 @@ const stream = fs.createWriteStream(`input.csv`);
 const rand = (max) => {
     return Math.round(Math.random() * max);
 };
-stream.write(cols);
+//stream.write(cols);
 
 for (let idx = 0; idx < COUNT; idx += 1) {
     stream.write(
