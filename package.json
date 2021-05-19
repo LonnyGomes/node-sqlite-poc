@@ -4,7 +4,9 @@
   "description": "POC to read/write large amounts of data into an SQLite database",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "csv:gen": "node src/gen-dummy-data.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/LonnyGomes/node-sqlite-poc/issues"
   },
-  "homepage": "https://github.com/LonnyGomes/node-sqlite-poc#readme"
+  "homepage": "https://github.com/LonnyGomes/node-sqlite-poc#readme",
+  "dependencies": {
+    "csv-parse": "^4.15.4"
+  }
 }
