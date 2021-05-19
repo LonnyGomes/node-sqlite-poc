@@ -1,19 +1,36 @@
+const sqlite3 = require('sqlite3').verbose();
 const fs = require('fs');
 const parse = require('csv-parse');
 
 const INPUT_FILE = 'input.csv';
 
-const output = [];
+const db = new sqlite3.Database('colors.db');
+
+const initDb = (dbRef) => {
+    dbRef.serialize(function () {
+        dbRef.run(`CREATE TABLE IF NOT EXISTS colors (
+      c INT,
+      m INT,
+      y INT,
+      k INT,
+      r INT,
+      g INT,
+      b INT)`);
+          //PRIMARY KEY(c,m,y,k))`);
+    });
+};
+
 // Create the parser
 const parser = parse({
-    columns: true,
+    columns: false,
+    cast: true,
 });
 
 // Use the readable stream api
 parser.on('readable', function () {
     let record;
     while ((record = parser.read())) {
-        // output.push(record)
+        db.run('INSERT INTO colors VALUES (?, ?, ?, ?, ?, ?, ?)', record);
     }
 });
 // Catch any error
@@ -26,7 +43,10 @@ parser.on('end', function () {
     console.log('finished');
 });
 
+// initialize db
+initDb(db);
+
 // Write data to the stream
 const inputStream = fs.createReadStream(INPUT_FILE);
 inputStream.pipe(parser);
-// Close the readable stream
+
