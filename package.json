@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
-    "csv:gen": "node src/gen-dummy-data.js"
+    "csv:gen": "node --max-old-space-size=8192 src/gen-dummy-data.js"
   },
   "repository": {
     "type": "git",
