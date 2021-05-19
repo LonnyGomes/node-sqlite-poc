@@ -19,7 +19,8 @@
   },
   "homepage": "https://github.com/LonnyGomes/node-sqlite-poc#readme",
   "dependencies": {
-    "csv-parse": "^4.15.4"
+    "csv-parse": "^4.15.4",
+    "sqlite3": "^5.0.2"
   },
   "devDependencies": {
     "prettier": "^2.3.0"
