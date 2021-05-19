@@ -1,0 +1,19 @@
+{
+  "name": "sqlite-poc",
+  "version": "1.0.0",
+  "description": "POC to read/write large amounts of data into an SQLite database",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LonnyGomes/node-sqlite-poc.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LonnyGomes/node-sqlite-poc/issues"
+  },
+  "homepage": "https://github.com/LonnyGomes/node-sqlite-poc#readme"
+}
